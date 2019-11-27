@@ -28,3 +28,4 @@ def cleanStave():
     return newStave
 
 print(getAllOccurance("Scrooge", STAVE))
+
