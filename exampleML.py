@@ -19,3 +19,10 @@ print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
 # Find named entities, phrases and concepts
 for entity in doc.ents:
     print(entity.text, entity.label_)
+
+
+## getConfidence()
+# Returns a float 0 to 1 as a ratio of how many times
+# the entity appeared with final type.
+def getConfidence(entity, documentEntities):
+    return 0.0 
