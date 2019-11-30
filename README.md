@@ -8,4 +8,4 @@ Things to do:
 By: 
 Humam Shwaikh
 Sina Vejdani
-Kathryn Thornley
+Kat Thornley
