@@ -20,9 +20,24 @@ print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
 for entity in doc.ents:
     print(entity.text, entity.label_)
 
-
 ## getConfidence()
 # Returns a float 0 to 1 as a ratio of how many times
 # the entity appeared with final type.
 def getConfidence(entity, documentEntities):
     return 0.0 
+
+## getAllQuotes(stave) returns list[quote, name]
+# 
+
+## getSentiment(quote) returns signed float
+#
+
+## setElementTags(string, dictionary) returns string
+#
+
+
+
+############################################################
+## Main
+
+## end Main
