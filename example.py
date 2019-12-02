@@ -24,7 +24,6 @@ def getAllOccurance(word, section):
 #Jack
 
 def cleanStave():
-    def removeAllPunctuation():
     # define punctuation 
     punctuation = "'!()-[]\{\};:'\"\,<>./?@#$%^&*_~''"
     my_text = STAVE
