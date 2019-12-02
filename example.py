@@ -2,7 +2,6 @@ import re
 
 
 # -*- coding: utf-8 -*-
-file = open('stave1.txt',mode='r',encoding='UTF8')
 file = open('stave1.txt', 'r')
 STAVE = file.read()
 file.close()
@@ -15,7 +14,6 @@ PARAGRAPHS = STAVE.split('\n')
 
 #Find speech in the parameter 'paragraph' return a array
 #Richard
-def findSpoken(paragraph): 
 
 
 def findSpoken(paragraph):
@@ -27,9 +25,7 @@ def findSpoken(paragraph):
 
 
 def getAllOccurance(word, section):
-    myList = section.find(word)
-    
-    return myList
+
     list = []
 
     for i in re.finditer(word, section):
