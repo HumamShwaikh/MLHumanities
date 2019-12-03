@@ -63,7 +63,7 @@ def getConfidence(entity, documentEntities):
 
 ##  When given a list of names, it goes through each name and adds a tag before and after the name.
 ##  In this case, it was designed for <persName>
-#   Sina
+##   Sina
 
 def setElementTag(String, Dictionary, section):
 
@@ -78,6 +78,8 @@ def setElementTag(String, Dictionary, section):
             List=example.getAllOccurance(index,section)
     return section
 
+
+
 ###########################################################
 # Program to find most frequent  
 # element in a list 
@@ -88,7 +90,9 @@ def most_frequent(List):
         dict[item] = dict.get(item, 0) + 1
         if dict[item] >= count : 
             count, itm = dict[item], item 
-    return(itm) 
+    return(itm)
+
+
 
 ############################################################
 ##  Main
@@ -111,6 +115,12 @@ for key in entityDict:
     conf = getConfidence(key,entityDict)
     entityDict[key] = [most_frequent(entityDict[key]), conf]
     print(key + " " + str(entityDict[key]))
+
+
+
+
+##Add persName tag to text
+
 
 
 ## end Main

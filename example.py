@@ -30,7 +30,7 @@ def getAllOccurance(word, section):
 
     for i in re.finditer(word, section):
         list.append(i.start())
-
+        list.append(i.end())
     return list
 
 
