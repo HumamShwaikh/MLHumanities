@@ -2,7 +2,7 @@ import re
 
 
 # -*- coding: utf-8 -*-
-file = open('stave1.txt', 'r')
+file = open('stave1.txt', mode='r', encoding='UTF8')
 STAVE = file.read()
 file.close()
 
