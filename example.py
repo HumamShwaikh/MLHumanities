@@ -52,8 +52,4 @@ def cleanStave():
     print(no_punct)
         
     return no_punct
-
-
-
-
 print(getAllOccurance("Marley", STAVE))
