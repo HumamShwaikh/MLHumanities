@@ -40,10 +40,20 @@ def getAllOccurance(word, section):
 
 
 def cleanStave():
-    newStave = STAVE
-    
-    return newStave
-
+    # define punctuation 
+    punctuation = "'!()-[]\{\};:'\"\,<>./?@#$%^&*_~''"
+    my_text = STAVE
+    #to take input from the user
+    #my_text = input("Enter stave1.txt")
+    #remove punctuation from the stave
+    no_punct = ""
+    for char in my_text:
+        if char not in punctuation:
+            no_punct = no_punct + char
+    #disply the unpunctuated text 
+    print(no_punct)
+        
+    return no_punct
 
 
 
