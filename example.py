@@ -48,4 +48,3 @@ def cleanStave():
 
 
 print(getAllOccurance("Marley", STAVE))
-
