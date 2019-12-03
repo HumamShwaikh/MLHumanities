@@ -15,6 +15,16 @@ text = file.read()
 doc = nlp(text)
 file.close()
 
+text = text.replace('“','"')
+text = text.replace('”','"')
+
+labelTranslate = {
+    "PERSON" : "persName",
+    "TIME" : "time",
+    "DATE" : "date",
+    "ORG" : "place"
+}
+
 #make list of tuples from doc.ents, 
 # type of each tuple is (string entity name,string entity label)
 lst = []
@@ -98,7 +108,8 @@ def getAllQuotes(stave,persList):
 
 ##  getSentiment(quote) returns signed float
 #   Amy (Lin)
-
+##def getSentiment(quote):
+    
 
 
 
@@ -106,13 +117,13 @@ def getAllQuotes(stave,persList):
 ##  In this case, it was designed for <persName>
 ##   Sina
 
-def setElementTag(String, Dictionary, section):
+def setElementTag(String, conf, Dictionary, section):
 
     for index in Dictionary:
         List=example.getAllOccurance(index, section)
 
         for i in range(0,len(List),2):
-            output=section[:List[i]]+"<"+String+">"+index
+            output=section[:List[i]]+"<"+String+ " confidence=" + conf +">"+index
             output2="<"+"/"+String+">"+section[List[i+1]:]
             output3=output+output2
             section=output3
@@ -164,16 +175,26 @@ for key in entityDict:
     entityDict[key] = [most_frequent(entityDict[key]), conf]
     print(key + " " + str(entityDict[key]))
 
-test = ""
+stave = text
 
-test = setElementTag("persName",["Scrooge"],"Scrooge is dead.")
+quotes = stave.split('\"')
+quotes = quotes[1::2]
 
-print(test)
+for quote in quotes:
+    stave = setElementTag("said","1",[quote],stave)
 
+stave = stave.replace("\n\n", "</p>\n<p>")
+stave = "<p>" + stave + "</p>"
 
-##Add persName tag to text
+for key in entityDict:
+    if entityDict[key][0] in labelTranslate:
+        stave = setElementTag(labelTranslate[entityDict[key][0]], str(round(entityDict[key][1],4)) , [key], stave)
 
+print(stave)
 
+encodedFile = open("stave1_encoded.txt", mode="w+", encoding='UTF8')
+encodedFile.write(stave)
+encodedFile.close()
 
 #getAllQuotes Test
 print("\nText and speaker for a random quote: ")

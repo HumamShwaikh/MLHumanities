@@ -1,13 +1,12 @@
 import re
 
-
 # -*- coding: utf-8 -*-
-file = open('stave1.txt', mode='r', encoding='UTF8')
+file = open('stave1.txt',mode='r',encoding='UTF8')
 STAVE = file.read()
 file.close()
 
 #Talk to Jacob first
-#905 920 5553 for Merge Conflicts
+#Merge Conflicts
 #Extract Each Paragraphs
 
 PARAGRAPHS = STAVE.split('\n')
@@ -52,9 +51,7 @@ def cleanStave():
             no_punct = no_punct + char
     #disply the unpunctuated text 
     print(no_punct)
-        
     return no_punct
-
 
 
 print(getAllOccurance("Marley", STAVE))
