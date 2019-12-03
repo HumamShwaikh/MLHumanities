@@ -123,7 +123,7 @@ def setElementTag(String, conf, Dictionary, section):
         List=example.getAllOccurance(index, section)
 
         for i in range(0,len(List),2):
-            output=section[:List[i]]+"<"+String+ " confidence=" + conf +" >"+index
+            output=section[:List[i]]+"<"+String+ " confidence=" + conf +">"+index
             output2="<"+"/"+String+">"+section[List[i+1]:]
             output3=output+output2
             section=output3
@@ -182,6 +182,9 @@ quotes = quotes[1::2]
 
 for quote in quotes:
     stave = setElementTag("said","1",[quote],stave)
+
+stave = stave.replace("\n\n", "</p>\n<p>")
+stave = "<p>" + stave + "</p>"
 
 for key in entityDict:
     if entityDict[key][0] in labelTranslate:
