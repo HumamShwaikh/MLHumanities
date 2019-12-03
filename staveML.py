@@ -101,7 +101,17 @@ def getAllQuotes(stave,persList):
 ##  setElementTags(string, dictionary) returns string
 #   Sina
 
-
+###########################################################
+# Program to find most frequent  
+# element in a list 
+def most_frequent(List): 
+    dict = {} 
+    count, itm = 0, '' 
+    for item in reversed(List): 
+        dict[item] = dict.get(item, 0) + 1
+        if dict[item] >= count : 
+            count, itm = dict[item], item 
+    return(itm) 
 
 ############################################################
 ##  Main
@@ -127,11 +137,12 @@ for entity in doc.ents:
 print("\nThe following is the dictionary of entities:\n")
 print(entityDict)
 
-#Get Confidence test
-print("\nConfidence test for entity 'Scrooge': ")
-conf = 0
-conf = getConfidence("Scrooge",entityDict)
-print(conf)
+#Add confidence to all keys
+for key in entityDict:
+    conf = getConfidence(key,entityDict)
+    entityDict[key] = [most_frequent(entityDict[key]), conf]
+    print(key + " " + str(entityDict[key]))
+
 
 #getAllQuotes Test
 print("\nText and speaker for a random quote: ")
