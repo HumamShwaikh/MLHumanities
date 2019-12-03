@@ -51,7 +51,7 @@ def cleanStave():
     #disply the unpunctuated text 
     print(no_punct)
         
-    return no_puncts
+    return no_punct
 
 
 
