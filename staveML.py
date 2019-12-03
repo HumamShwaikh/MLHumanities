@@ -175,11 +175,12 @@ stave = text
 
 for key in entityDict:
     if entityDict[key][0] in labelTranslate:
-        test = setElementTag(labelTranslate[entityDict[key][0]], [key], stave)
+        stave = setElementTag(labelTranslate[entityDict[key][0]], [key], stave)
 
 print(stave)
 
-
+encodedFile = open("stave1_encoded.txt", mode="w+",encoding='UTF8')
+encodedFile = stave
 
 ##Add persName tag to text
 
