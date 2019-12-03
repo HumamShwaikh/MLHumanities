@@ -178,6 +178,6 @@ print(test)
 #getAllQuotes Test
 print("\nText and speaker for a random quote: ")
 quotes = getAllQuotes(text,persList)
-print(quotes[random.randint(0,len(quotes))])
+print(quotes[random.randint(0,len(quotes)-1)])
 
 ## end Main
