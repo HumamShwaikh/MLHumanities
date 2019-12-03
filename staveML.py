@@ -79,10 +79,9 @@ print("\nThe following is the dictionary of entities:\n")
 print(entityDict)
 
 #Get Confidence test
-print("\nConfidence test for entity 'Scrooge': ")
-conf = 0
-conf = getConfidence("Scrooge",entityDict)
-print(conf)
+for key in entityDict:
+    conf = getConfidence(key,entityDict)
+    print(key + " " + str(conf))
 
 
 ## end Main
