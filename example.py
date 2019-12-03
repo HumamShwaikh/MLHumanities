@@ -7,7 +7,7 @@ STAVE = file.read()
 file.close()
 
 #Talk to Jacob first
-#905 920 5553 for Merge Conflicts
+#Merge Conflicts
 #Extract Each Paragraphs
 
 PARAGRAPHS = STAVE.split('\n')
