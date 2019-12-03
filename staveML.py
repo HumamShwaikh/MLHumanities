@@ -116,7 +116,11 @@ for key in entityDict:
     entityDict[key] = [most_frequent(entityDict[key]), conf]
     print(key + " " + str(entityDict[key]))
 
+test = ""
 
+test = setElementTag("persName",["Scrooge"],"Scrooge is dead.")
+
+print(test)
 
 
 ##Add persName tag to text
