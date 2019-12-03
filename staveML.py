@@ -193,10 +193,6 @@ encodedFile = open("stave1_encoded.txt", mode="w+", encoding='UTF8')
 encodedFile.write(stave)
 encodedFile.close()
 
-##Add persName tag to text
-
-
-
 #getAllQuotes Test
 print("\nText and speaker for a random quote: ")
 quotes = getAllQuotes(text,persList)
