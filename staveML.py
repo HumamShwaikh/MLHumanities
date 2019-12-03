@@ -75,9 +75,11 @@ for entity in doc.ents:
    print(entity.text, entity.label_)
 
 #Show Entity Dictionary
+print("\nThe following is the dictionary of entities:\n")
 print(entityDict)
 
 #Get Confidence test
+print("\nConfidence test for entity 'Scrooge': ")
 conf = 0
 conf = getConfidence("Scrooge",entityDict)
 print(conf)
