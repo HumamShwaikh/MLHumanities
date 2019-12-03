@@ -1,8 +1,7 @@
 import re
 
-
 # -*- coding: utf-8 -*-
-file = open('stave1.txt', mode='r', encoding='UTF8')
+file = open('stave1.txt',mode='r',encoding='UTF8')
 STAVE = file.read()
 file.close()
 
@@ -52,9 +51,7 @@ def cleanStave():
             no_punct = no_punct + char
     #disply the unpunctuated text 
     print(no_punct)
-        
     return no_punct
-
 
 
 print(getAllOccurance("Marley", STAVE))

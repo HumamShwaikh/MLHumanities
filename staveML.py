@@ -14,6 +14,13 @@ text = file.read()
 doc = nlp(text)
 file.close()
 
+labelTranslate = {
+    "PERSON" : "persName",
+    "TIME" : "time",
+    "DATE" : "date",
+    "ORG" : "place"
+}
+
 #make list of tuples from doc.ents, 
 # type of each tuple is (string entity name,string entity label)
 lst = []
@@ -116,11 +123,14 @@ for key in entityDict:
     entityDict[key] = [most_frequent(entityDict[key]), conf]
     print(key + " " + str(entityDict[key]))
 
-test = ""
+stave = text
 
-test = setElementTag("persName",["Scrooge"],"Scrooge is dead.")
+for key in entityDict:
+    if entityDict[key][0] in labelTranslate:
+        test = setElementTag(labelTranslate[entityDict[key][0]], [key], stave)
 
-print(test)
+print(stave)
+
 
 
 ##Add persName tag to text
