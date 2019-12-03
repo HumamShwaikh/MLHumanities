@@ -15,6 +15,9 @@ text = file.read()
 doc = nlp(text)
 file.close()
 
+text = text.replace('“','"')
+text = text.replace('”','"')
+
 labelTranslate = {
     "PERSON" : "persName",
     "TIME" : "time",
@@ -105,7 +108,8 @@ def getAllQuotes(stave,persList):
 
 ##  getSentiment(quote) returns signed float
 #   Amy (Lin)
-
+##def getSentiment(quote):
+    
 
 
 
@@ -173,13 +177,19 @@ for key in entityDict:
 
 stave = text
 
+quotes = stave.split('\"')
+quotes = quotes[1::2]
+
+for quote in quotes:
+    stave = setElementTag("said","1",[quote],stave)
+
 for key in entityDict:
     if entityDict[key][0] in labelTranslate:
         stave = setElementTag(labelTranslate[entityDict[key][0]], str(round(entityDict[key][1],4)) , [key], stave)
 
 print(stave)
 
-encodedFile = open("stave1_encoded.txt", mode="w+",encoding='UTF8')
+encodedFile = open("stave1_encoded.txt", mode="w+", encoding='UTF8')
 encodedFile.write(stave)
 encodedFile.close()
 
