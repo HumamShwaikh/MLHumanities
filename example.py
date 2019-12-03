@@ -6,7 +6,7 @@ STAVE = file.read()
 file.close()
 
 #Talk to Jacob first
-#Merge Conflicts
+#Merge Conflicts contact Humam
 #Extract Each Paragraphs
 
 PARAGRAPHS = STAVE.split('\n')
