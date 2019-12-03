@@ -84,4 +84,5 @@ conf = 0
 conf = getConfidence("Scrooge",entityDict)
 print(conf)
 
+
 ## end Main
