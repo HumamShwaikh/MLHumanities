@@ -4,6 +4,7 @@
 import spacy
 import operator
 import random
+import example
 
 # Load English tokenizer, tagger, parser, NER and word vectors
 nlp = spacy.load("en_core_web_sm")
@@ -98,8 +99,27 @@ def getAllQuotes(stave,persList):
 ##  getSentiment(quote) returns signed float
 #   Amy (Lin)
 
-##  setElementTags(string, dictionary) returns string
-#   Sina
+
+
+
+##  When given a list of names, it goes through each name and adds a tag before and after the name.
+##  In this case, it was designed for <persName>
+##   Sina
+
+def setElementTag(String, Dictionary, section):
+
+    for index in Dictionary:
+        List=example.getAllOccurance(index, section)
+
+        for i in range(0,len(List),2):
+            output=section[:List[i]]+"<"+String+">"+index
+            output2="<"+"/"+String+">"+section[List[i+1]:]
+            output3=output+output2
+            section=output3
+            List=example.getAllOccurance(index,section)
+    return section
+
+
 
 ###########################################################
 # Program to find most frequent  
@@ -111,7 +131,8 @@ def most_frequent(List):
         dict[item] = dict.get(item, 0) + 1
         if dict[item] >= count : 
             count, itm = dict[item], item 
-    return(itm) 
+    return(itm)
+
 
 ############################################################
 ##  Main
@@ -142,6 +163,16 @@ for key in entityDict:
     conf = getConfidence(key,entityDict)
     entityDict[key] = [most_frequent(entityDict[key]), conf]
     print(key + " " + str(entityDict[key]))
+
+test = ""
+
+test = setElementTag("persName",["Scrooge"],"Scrooge is dead.")
+
+print(test)
+
+
+##Add persName tag to text
+
 
 
 #getAllQuotes Test
