@@ -119,7 +119,7 @@ def setElementTag(String, conf, Dictionary, section):
         List=example.getAllOccurance(index, section)
 
         for i in range(0,len(List),2):
-            output=section[:List[i]]+"<"+String+ " confidence=" + conf +">"+index
+            output=section[:List[i]]+"<"+String+ " confidence=" + conf +" >"+index
             output2="<"+"/"+String+">"+section[List[i+1]:]
             output3=output+output2
             section=output3
