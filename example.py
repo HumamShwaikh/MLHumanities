@@ -1,7 +1,65 @@
+import re
+
+
 # -*- coding: utf-8 -*-
-sentence = "Nobody ever stopped him in the street to say, with gladsome looks, \"My dear Scrooge, how are you? When will you come to see me?\" No beggars implored him to bestow a trifle, no children asked him what it was o’clock, no man or woman ever once in all his life inquired the way to such and such a place, of Scrooge. Even the blind men’s dogs appeared to know him; and when they saw him coming on, would tug their owners into doorways and up courts; and then would wag their tails as though they said, \"No eye at all is better than an evil eye, dark master!\""
+file = open('stave1.txt', 'r')
+STAVE = file.read()
+file.close()
 
-#Extract First Word
+#Talk to Jacob first
+#905 920 5553 for Merge Conflicts
+#Extract Each Paragraphs
 
-sentences = sentence.find("Scrodoge")
-print(sentences)
+PARAGRAPHS = STAVE.split('\n')
+
+#Find speech in the parameter 'paragraph' return a array
+#Richard
+
+
+def findSpoken(paragraph):
+    return {}
+
+
+#Return a list of everytime word appears
+#Returns the starting index of the word in a list
+
+
+def getAllOccurance(word, section):
+
+    list = []
+
+    for i in re.finditer(word, section):
+        list.append(i.start())
+
+    return list
+
+
+
+#Remove all punctuation 
+#Jack
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> ee2d795837ebb7d17b9f36f78a8b222a6b2a62a6
+def cleanStave():
+    # define punctuation 
+    punctuation = "'!()-[]\{\};:'\"\,<>./?@#$%^&*_~''"
+    my_text = STAVE
+    #to take input from the user
+    #my_text = input("Enter stave1.txt")
+    #remove punctuation from the stave
+    no_punct = ""
+    for char in my_text:
+        if char not in punctuation:
+            no_punct = no_punct + char
+    #disply the unpunctuated text 
+    print(no_punct)
+        
+    return no_puncts
+
+
+
+
+print(getAllOccurance("Marley", STAVE))
+
