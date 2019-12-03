@@ -113,13 +113,13 @@ def getAllQuotes(stave,persList):
 ##  In this case, it was designed for <persName>
 ##   Sina
 
-def setElementTag(String, Dictionary, section):
+def setElementTag(String, conf, Dictionary, section):
 
     for index in Dictionary:
         List=example.getAllOccurance(index, section)
 
         for i in range(0,len(List),2):
-            output=section[:List[i]]+"<"+String+">"+index
+            output=section[:List[i]]+"<"+String+ " confidence= " + conf +">"+index
             output2="<"+"/"+String+">"+section[List[i+1]:]
             output3=output+output2
             section=output3
@@ -175,12 +175,13 @@ stave = text
 
 for key in entityDict:
     if entityDict[key][0] in labelTranslate:
-        stave = setElementTag(labelTranslate[entityDict[key][0]], [key], stave)
+        stave = setElementTag(labelTranslate[entityDict[key][0]], str(round(entityDict[key][1],4)) , [key], stave)
 
 print(stave)
 
 encodedFile = open("stave1_encoded.txt", mode="w+",encoding='UTF8')
-encodedFile = stave
+encodedFile.write(stave)
+encodedFile.close()
 
 ##Add persName tag to text
 
