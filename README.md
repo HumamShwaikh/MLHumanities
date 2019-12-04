@@ -1,7 +1,7 @@
 # MLHumanities
 Utilizing ML to accelerate the field of Digital Humanities.
 
-pip install spacy \n
+pip install spacy  
 python -m spacy download en_core_web_sm
 
 then run :
