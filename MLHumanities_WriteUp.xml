@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- the line above is the "XML declaration"; it is not -->
+<!-- required, but we recommend using it -->
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- the two lines above are processing instructions for finding the schema; -->
+<!-- they are intended for oXygen, but other software might use them, also -->
+<?xml-stylesheet title="TEI Boilerplate" type="text/xsl" href="teibp.xsl"?>
+<!-- the line above is a processing instruction that asks that -->
+<!-- this file be transformed by "teibp.xsl" -->
+<?xml-stylesheet title="your own CSS"    type="text/css" href="../css/tiny_TEI_template.css" alternate="yes"?>
+<!-- the line above is a processing instruction that asks that -->
+<!-- this file be styled by "tiny_TEI_template.css" -->
+<TEI xmlns:html="http://www.w3.org/1999/xhtml" 
+  xmlns="http://www.tei-c.org/ns/1.0" >
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Digital Humanities Machine Learning Experiment</title>
+        <author>
+          <persName>Humam Shwaikh</persName>
+          <persName>Kat Thronley</persName>
+          <persName>Sina Vejdani</persName>
+          <persName>Lan "Amy" Di</persName>
+          <persName>Jacob Kszan</persName>
+          <persName>Richard Kasabri</persName>
+          <persName>Lin "Jack" Chen</persName>
+          <persName>Cedrick Bonhomme</persName>
+        </author>
+      </titleStmt>
+      <publicationStmt> 
+        <ab><!-- copyright or copyleft information here --></ab>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <!-- source information here; better yet, use a <biblStruct> instead -->
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <!-- front matter, if any, goes in <div>s, here -->
+    </front>
+   <body>
+      <head>
+        A Machine's Experiment in the Humanities
+      </head>
+      <p>
+        Machine Learning, which is a subfield of computer science, trains computers to learn a subject without being explicitly programmed. In the course DHN1100, our group takes advantage of machine learning to organize the contents and the structure of the book: A Christmas Carol. Firstly, we used Python, which is a programming language, to code the program, and then we created a dictionary by inputting the texts of books written by the same author who is Charles Dickens. Our goal was, after importing these texts, we would train the algorithm to learn Dicken’s writing styles and other characteristics inside his writings, so computers are able to identify where the single line or the paragraph ends, whether a word is a person’s name, where a picture should be inserted, and so on. Thus, computers can automatically organize the text of A Christmas Carol. By comparing between using machine learning and using xml in edition, machine learning is definitely more efficient for the simple tasks.
+      </p>
+     <p>
+       However, due to the short deadline, we used an existing training set that was more than capable of detecting names, dates, times, and locations. We decided those tags would save plenty of time since they're typically the most common tags in TEI. This would allow the human encoders to spend less time on mindless tasks and more time on the interesting aspects of TEI.
+     </p>
+   </body>
+  </text>
+</TEI>
