@@ -12,7 +12,7 @@ Python 3 is required for this project
 # By: 
 * Humam Shwaikh (Maintainer)
 * Sina Vejdani
-* Kat Thornley
+* Kate Thornley
 * Jacob Kszan
 * Lin "Jack" Chen
 * Lan "Amy" Di
